@@ -1,0 +1,65 @@
+/* 1. THE WRAPPER LOGIC */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.machine-wrapper {
+    width: 300px;
+    background: #ff4d4d; /* Bright red machine */
+    padding: 20px;
+    border: 10px solid #333;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 2. THE GAME AREA */
+.game-area {
+    height: 300px;
+    background: #87CEEB; /* Sky blue inside */
+    position: relative;
+    border: 5px solid #222;
+    overflow: hidden; /* Keeps the claw inside the box */
+}
+
+/* 3. THE CLAW (The "Simple Claw") */
+.claw-arm {
+    width: 10px;
+    height: 50px;
+    background: #555;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: height 0.5s ease-in-out; /* Makes it "drop" smoothly */
+}
+
+.claw-hook {
+    width: 40px;
+    height: 20px;
+    border: 4px solid #333;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    bottom: -20px;
+    left: -15px;
+}
+
+/* 4. THE INTERACTION */
+.game-area:hover .claw-arm {
+    height: 230px; /* The claw "drops" when you hover */
+}
+
+.prize {
+    font-size: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
